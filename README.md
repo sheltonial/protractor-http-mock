@@ -130,6 +130,19 @@ A full mock for a POST call takes the following options:
 	    status: 204 // The HTTP status code for the mocked response. This is an optional field.
 	  }
 
+Path is matched by regular expression when `pathRegEx` is set to `true`
+
+	  request: {
+	    path: /^\/products\/1\/items$/,
+	    pathRegEx: true,
+	    method: 'GET',
+	  },
+	  response: {
+	    data: {},
+	    status: 200
+	  }
+
+
 #### Request
 Defining `params` or `data` will help the plugin match more specific responses but neither is required. If the `params` and/or `data` are not set, then it will not be taken into account when matching a request.
 
